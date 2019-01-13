@@ -6,7 +6,7 @@ var guessRemaining = 9;
       var arr = [];
          
    function letterGuess() {
- 
+   
    text = possible.charAt(Math.floor(Math.random() * possible.length));
    
    // test
