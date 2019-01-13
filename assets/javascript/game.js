@@ -4,22 +4,15 @@ var guessRemaining = 9;
       var wins = 1;
       var lose = 1;
       var arr = [];
-      
-    
-function letterGuess() {
-  
-   
+         
+   function letterGuess() {
+ 
    text = possible.charAt(Math.floor(Math.random() * possible.length));
    
+   // test
    console.log(text)
-   
- 
-   
-     
-   document.onkeypress = compare;
 
-   
-        
+   document.onkeypress = compare;       
 }
 
 function compare() {
@@ -37,20 +30,17 @@ function compare() {
       document.getElementById("imag").innerHTML = "<img src ='assets/images/happy.jpeg'>";
       letterGuess();
    } else {
-      // console.log("else")
       for (var i=0; i < guessRemaining+1; i++) {
          arr.push(k);
          document.getElementById("inpt").value = arr;
          guessRemaining -= 1;
          document.getElementById("par").innerHTML = guessRemaining; 
-         // console.log(guessRemaining)
          document.getElementById("imag").innerHTML = (" ")
          document.getElementById("letterToGuess").innerHTML = ("*")
 
          if (guessRemaining==0) {
             document.getElementById("inpt").value = []; 
             document.getElementById("loses").innerHTML = lose++
-            // document.getElementById("inpt").value = [];
             document.getElementById("imag").innerHTML = "<img src =\"assets/images/sad.jpeg \">"
             document.getElementById("letterToGuess").innerHTML = ("The letter to guess was : " + " ' " + text.toUpperCase() + " ' ");
             guessRemaining=9;
@@ -71,52 +61,3 @@ function compare() {
  }
  
 document.onkeypress = letterGuess;
-
-/////////////////////////////////////////
-
-// function win()
-//     {
-//         if(text==k) 
-//             {
-   
-//                 arr.push(k);
-//                 document.getElementById("int").value = []; 
-//                 document.getElementById("wins").innerHTML = wins++
-//                 guessRemaining
-//                 letterGuess();
-//         //  console.log("you got it")
-//             }
-//     }
-    
-//     win();
-    
-
-//      if(text!=k)
-//       {
-        
-//         // console.log("you missed it")
-        
-//         for (var i=0; i < guessRemaining; i++)
-//         { 
-            
-//             document.getElementById("par").innerHTML = guessRemaining--; 
-//         // console.log(arr);
-        
-//            arr.push(k);
-//            document.getElementById("int").value = arr;
-     
-//              if (guessRemaining===0)
-//                  {
-//                     document.getElementById("int").value = []; 
-//                     document.getElementById("loses").innerHTML = lose++
-            
-            
-//                   }
-       
-//             break;
-       
-        
-//            }
-         
-    
-//        }
